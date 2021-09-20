@@ -1,6 +1,10 @@
 <?php
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use App\Category;
+
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+    
     }
 }
