@@ -26,12 +26,17 @@
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
-                //AGGIUNGERE COLLEGAMENTO A PAG CATEGORIE
+
                 <tbody>
                     @foreach ($posts as $post)
                     <tr >
                         <th>{{ $post->title }}</th>
-                        <td><a href="{{route('admin.categories', $categories->where('id', $post->cat_id)->first()->slug)}}" class="cat">{{ $categories->where('id', $post->cat_id)->first()->name }}</a></td>
+                        <td>
+                            @if($post->cat_id)
+                            {{-- {{route('admin.categories.show', $post->Category->slug)}} --}}
+                            <a href="" class="cat">{{$post->Category->name}}</a>
+                            @endif
+                        </td>
                         <td class="colText">{{ $post->content }}</td>
                         <td class="d-flex justify-content-around">
                             <a href="{{ route('admin.posts.show', $post->slug) }}" class="button">

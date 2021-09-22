@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Boolpress')
+@section('title', $cat->name)
 @section('content')
 <div class="container">
     <h2>ciao</h2>

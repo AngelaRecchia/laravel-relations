@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Post;
+use App\Category;
 
 class CategoryController extends Controller
 {
@@ -12,7 +14,7 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __invoke($cat_slug)
+    public function show($cat_slug)
     {
         $cat = Category::all()->where('slug', $cat_slug)->first();
         $posts = Post::all()->where('cat_id', $cat->id)->all();
@@ -26,7 +28,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $cats = Category::all();
+        $posts = Post::all();
+        return view('admin.categories.index', compact('cats', 'posts'));
     }
 
     /**
@@ -46,17 +50,6 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
     {
         //
     }
