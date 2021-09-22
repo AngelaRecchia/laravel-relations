@@ -13,7 +13,11 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $cats = ['music', 'cinema', 'art', 'living', 'work', 'travel', 'food', 'diy'];
+        foreach(Category::all() as $cat) {
+            $cat->delete();
+        }
+
+        $cats = ['Book Review', 'Article', 'News', 'Movie Review', 'Opinion', 'Inspirational', 'Flow'];
 
         foreach($cats as $cat) {
             $newCat = new Category();

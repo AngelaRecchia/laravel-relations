@@ -22,6 +22,20 @@
 
               <input type="text" name="title" class="form-control" id="titolo" value="{{ old('title', $post->title) }}">
             </div>
+
+            <div class="mb-3">
+                <select class="form-control" name="cat_id" id="category">
+                    @foreach($categories as $category)                      
+                        <option value="{{ $category->id }}"
+                            @if($category->id == old('cat_id', $post->cat_id)) 
+                            selected 
+                            @endif>
+                            {{ $category->name }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="mb-3">
               <textarea name="content" id="descr" cols="30" rows="15" class="form-control">{{ old('content', $post->content) }}</textarea>
             </div>

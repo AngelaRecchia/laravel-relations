@@ -9,6 +9,7 @@
         </h4>
 
         <div class="card-body">
+            <div class="card-title"><span class="cat">{{ucfirst($category->name)}}</span></div>
             <p class="card-text"> {{ $post->content }}</p>
         </div>
 

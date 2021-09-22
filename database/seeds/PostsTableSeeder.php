@@ -32,6 +32,7 @@ class PostsTableSeeder extends Seeder
             $post->save();
         }
 
+ 
 
     }
 }
