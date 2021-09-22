@@ -33,8 +33,7 @@
                         <th>{{ $post->title }}</th>
                         <td>
                             @if($post->cat_id)
-                            {{-- {{route('admin.categories.show', $post->Category->slug)}} --}}
-                            <a href="" class="cat">{{$post->Category->name}}</a>
+                            <a href="{{route('admin.categories.show', $post->Category->slug)}}" class="cat">{{$post->Category->name}}</a>
                             @endif
                         </td>
                         <td class="colText">{{ $post->content }}</td>

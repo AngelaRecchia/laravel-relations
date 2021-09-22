@@ -6,7 +6,7 @@
     <div class="row row-cols-3">
     @foreach($cats as $cat)
         <div class="col">
-            <h4>{{ $cat->name }}</h4>
+            <h4 class="my-3"><a href="{{route('admin.categories.show', $cat->slug)}}" class="cat big">{{ $cat->name }}</a></h4>
                 @forelse($cat->posts as $post)
                     <h6><a href="{{ route('admin.posts.show', $post->slug)}} ">{{ $post->title}}</a></h4>
                 @empty
